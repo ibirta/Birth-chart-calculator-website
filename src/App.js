@@ -1,67 +1,3 @@
-// import { useState } from "react";
-
-// const BirthChartCalculator = () => {
-//   const [data, setData] = useState(null);
-//   const [error, setError] = useState(null);
-
-//   const fetchBirthChart = async () => {
-//     try {
-//       const response = await fetch("http://localhost:5000/calculate", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({
-//           year: 1996,
-//           month: 5,
-//           day: 20,
-//           hour: 14,
-//           minute: 30,
-//           latitude: 55.6761,
-//           longitude: 12.5683
-//         }),
-//       });
-
-//       const result = await response.json();
-//       setData(result);
-//     } catch (err) {
-//       setError("Error fetching birth chart.");
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Birth Chart Calculator</h2>
-//       <button onClick={fetchBirthChart}>Get Birth Chart</button>
-
-//       {error && <p style={{ color: "red" }}>{error}</p>}
-
-//       {data && (
-//         <div>
-//           <h3>Sun Sign: {data.sunSign}</h3>
-//           <h3>Moon Sign: {data.moonSign}</h3>
-//           <h3>Rising Sign: {data.risingSign}</h3>
-//           <h3>Houses</h3>
-//           <ul>
-//             {data.houses.map((house) => (
-//               <li key={house.house}>
-//                 <strong>House {house.house}:</strong> {house.position}° ({house.sign})
-//               </li>
-//             ))}
-//           </ul>
-//           <h3>Planetary Positions:</h3>
-//           <ul>
-//             {Object.entries(data.planets || {}).map(([planet, details]) => (
-//               <li key={planet}>
-//                 {planet}: {details.position}° in {details.sign}
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default BirthChartCalculator;
 import { useState } from "react";
 
 const BirthChartCalculator = () => {
@@ -80,7 +16,7 @@ const BirthChartCalculator = () => {
 
   // Handle input changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.targfet.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   // Convert town to latitude and longitude
